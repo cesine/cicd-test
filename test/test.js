@@ -16,7 +16,7 @@
 const server = require('../index.js')
 const data = require('../data.json')
 const request = require('request')
-const expect = require('Chai').expect
+const expect = require('chai').expect
 
 describe('server responses', function () {
   it('GET on / should return Hello World!', function (done) {
