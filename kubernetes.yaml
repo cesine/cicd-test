@@ -22,6 +22,7 @@ spec:
       protocol: TCP
   selector:
     name: cicd-test
+  type: LoadBalancer
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
