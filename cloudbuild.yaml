@@ -1,6 +1,6 @@
 steps:
 - name: 'node:alpine'
-  args: ["/bin/bash", "-c", 'npm install && npm test']
+  args: ["/bin/sh", "-c", 'npm install && npm test']
 
 # Uses the docker build step to build an image called my-image
 - name: 'gcr.io/cloud-builders/docker'
@@ -8,7 +8,7 @@ steps:
 
 # Uses the kubectl tool to update the deployment
 - name: 'gcr.io/cloud-builders/kubectl'
-  args: ["/bin/bash", "-c", "sed -e 's~<PROJECT_ID>~$PROJECT_ID~g' kubernetes.yaml | sed -e 's~<REPO_NAME>~$REPO_NAME~g' | sed -e 's~<COMMIT_SHA>~$COMMIT_SHA~g' | kubectl apply -f -"]
+  args: ["/bin/sh", "-c", "sed -e 's~<PROJECT_ID>~$PROJECT_ID~g' kubernetes.yaml | sed -e 's~<REPO_NAME>~$REPO_NAME~g' | sed -e 's~<COMMIT_SHA>~$COMMIT_SHA~g' | kubectl apply -f -"]
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1-f'
   - 'CLOUDSDK_CONTAINER_CLUSTER=cicd-test'
