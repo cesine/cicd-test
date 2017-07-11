@@ -16,7 +16,7 @@ WORKDIR /home/code
 COPY package.json package.json  
 RUN npm install --production
 
-COPY /data/data.json /data/data.json
+COPY ./data/data.json ./data/data.json
 COPY index.js index.js  
 EXPOSE 3000
 
