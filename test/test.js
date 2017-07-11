@@ -14,7 +14,7 @@
 */
 
 const server = require('../index.js')
-const data = require('../data.json')
+const data = require('../data/data.json')
 const request = require('request')
 const expect = require('chai').expect
 

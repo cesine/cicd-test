@@ -12,10 +12,11 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 FROM node:alpine
+WORKDIR /home/code
 COPY package.json package.json  
 RUN npm install --production
 
-COPY data.json data.json
+COPY /data/data.json /data/data.json
 COPY index.js index.js  
 EXPOSE 3000
 

@@ -35,7 +35,7 @@ spec:
   template:
     metadata:
       labels:
-        name: cicd-test-server
+        name: cicd-test
     spec:
       containers:
       - name: cicd-test-container
